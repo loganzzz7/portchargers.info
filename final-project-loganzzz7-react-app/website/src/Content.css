@@ -1,0 +1,237 @@
+/* main */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-top: 82px;
+    width: 100%;
+}
+
+.mainBackground {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.mainBackground img {
+    width: 100%;
+    height: auto;
+}
+
+.motto {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 30%;
+    left: 23%;
+    transform: translate(-50%, -23%);
+    z-index: 10;
+    color: rgba(255, 255, 255, 0.997);
+    font-size: 50px;
+    font-weight: bold;
+}
+
+#expensiveStrikeOut {
+    text-decoration: line-through;
+}
+
+/* welcomeMsg */
+.whoWeAre {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #43DD52;
+    /* min-width: 100vh; */
+}
+
+.whoWeAreHeading {
+    margin-bottom: 0.5rem;
+}
+
+.whoWeAreBody{
+    display: flex;
+    margin: 0 6rem;
+    opacity: 0;
+    transition: opacity 3s ease-out;
+    will-change: opacity;
+}
+
+.whoWeAreTxt {
+    flex: 1;
+    max-width: 50%;
+    display: flex;
+    align-items: center;
+    transform: translateX(-150%);
+    transition: transform 1s ease-out; /* Only keep the transform transition */
+    /* opacity: 0; */ /* Temporarily removed for testing */
+}
+
+.whoWeAreTxt.slideIn {
+    transform: translateX(0);
+    /* opacity: 1; */ /* Temporarily removed for testing */
+}
+
+.whoWeArePhoto {
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex: 1;
+}
+
+.whoWeArePhoto img {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+.whoWeArePhoto img.fadeIn {
+    opacity: 1;
+}
+
+.whoWeAreHeadingAndP {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* targetedSectors */
+.targetedSectorsSect {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #43DD52;
+}
+
+.targetedSectorsBody {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 6rem;
+}
+
+.targetedSectorsHeading {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.targetedSectorsIcons {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+}
+
+.targetedSectorsIcons img {
+    overflow: hidden;
+    border: 4px solid #43DD52;
+    border-radius: 0.5rem;
+    transition: 0.5s all ease-in-out;
+    width: 14rem;
+    height: 14rem;
+}
+
+.targetedSectorsIcons img:hover {
+    transform: scale(1.15);
+}
+
+/* modal */
+/* https://www.w3schools.com/howto/howto_css_modals.asp */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 20;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.closeBtnIcon {
+    color: rgba(255, 255, 255, 0.997);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+  
+.closeBtnIcon:hover,
+.closeBtnIcon:focus {
+    /* dark grey */
+    color: #43DD52;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.iconModalContent {
+    background-color: rgba(0, 0, 0, 0.997);
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #43DD52;
+    width: 60%;
+}
+
+#iconPlaceHolderImg {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 0.3rem;
+}
+
+.leftBtn {
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    left: 1rem;
+    color: rgba(255, 255, 255, 0.997);
+    font-size: 28px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.997);
+}
+
+.rightBtn {
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    right: 1rem;
+    color: rgba(255, 255, 255, 0.997);
+    font-size: 28px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.997);
+}
+
+.leftBtn:hover,
+.rightBtn:hover {
+    /* dark grey */
+    color: #43DD52;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* icons */
+@media (max-width: 543px) {
+    .targetedSectorsHeading {
+        font-size: medium;
+    }
+
+    .targetedSectorsIcons img {
+        width: 5rem;
+        height: 5rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .targetedSectorsHeading {
+        font-size: small;
+    }
+
+    .targetedSectorsIcons img {
+        width: 3rem;
+        height: 3rem;
+    }
+}

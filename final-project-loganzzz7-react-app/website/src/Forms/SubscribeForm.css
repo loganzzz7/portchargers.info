@@ -1,0 +1,90 @@
+/* newsLetter */
+.subscribe {
+    padding-bottom: 2rem;
+}
+
+.subscribeFormContent {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.subscribeBody {
+    display: flex;
+    flex-direction: column;
+    margin: 0 6rem;
+    gap: 1rem;
+}
+
+.subscribe input {
+    padding: 0.5rem;
+    border: rgba(255, 255, 255, 0.997);
+    border-radius: 5px;
+}
+
+.subscribe input:focus {
+    outline: none;
+}
+
+.emailAddTxtAndInput {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.emailAddField {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.emailAddField #mustFill {
+    color: #43DD52;
+}
+
+.nLInputName {
+    font-weight: bold;
+}
+
+.firstLastNameField {
+    display: flex;
+    justify-content: flex-start;
+    gap: 0.5rem;
+}
+
+.firstNField {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    /* 50% first one grow to fill */
+    flex-grow: 1;
+    max-width: 50%;
+}
+
+.lastNField {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex-grow: 1;
+    max-width: 50%;
+}
+
+.newsLetterSub {
+    display: flex;
+    justify-content: center;
+}
+
+.newsLetterSubBtn {
+    display: flex;
+    justify-content: center;
+    max-width: min-content;
+    color: rgba(0, 0, 0, 0.997);
+    background-color: #43DD52;
+    border: none;
+    border-radius: 5px;
+    transition: color 0.3s ease;
+    padding: 0.5rem 1rem;
+}
+
+.newsLetterSubBtn:hover {
+    color: rgba(255, 255, 255, 0.997);
+}
