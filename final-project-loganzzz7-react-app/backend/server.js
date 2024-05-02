@@ -11,9 +11,13 @@ mailchimp.setConfig({
     server: process.env.MAILCHIMP_API_SERVER,
 });
 
-const port = 8080; // idk y but airplay takes up port 5000 and 7000??
-
 const app = express();
+
+const port = 8080; // idk y but airplay takes up port 5000 and 7000??
+// check port
+app.listen(port, () => {
+    console.log(`listening on port ${port}`);
+});
 
 app.use(cors());
 app.use(express.json());
@@ -41,8 +45,4 @@ app.post('/addSubscriber', async (req, res) => {
         console.error('error:', error);
         res.status(500).json({ message: "add sub fail", error: error.toString() });
     }
-});
-
-app.listen(port, () => {
-    console.log(`listening on port ${port}`);
 });

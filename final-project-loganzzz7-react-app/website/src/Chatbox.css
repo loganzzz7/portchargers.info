@@ -1,0 +1,8 @@
+.chatbotFAB button {
+    background-color: rgba(0, 0, 0, 0.997);
+    color: #43DD52;
+    border-radius: 25px;
+    width: 45px;
+    height: 45px;
+    border: 2px solid #43DD52;
+}
