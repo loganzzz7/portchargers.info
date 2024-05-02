@@ -43,16 +43,3 @@ img {
 ul {
     padding: 0;
 }
-
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 100;
-    height: auto;
-    background-color: #000000;
-    border-bottom: 2px solid #43DD52;
-    padding: 1rem 0rem;
-    transition: top 0.3s;
-}

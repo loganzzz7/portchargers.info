@@ -88,3 +88,10 @@
 .newsLetterSubBtn:hover {
     color: rgba(255, 255, 255, 0.997);
 }
+
+.submitStatus p {
+    font-size: large;
+    color: #43DD52;
+    display: flex;
+    justify-content: center;
+}

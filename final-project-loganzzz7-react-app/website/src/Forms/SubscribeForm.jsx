@@ -7,7 +7,10 @@ function SubscribeForm() {
         firstName: '',
         lastName: ''
     });
-    
+
+    const [submitStatus, setSubmitStatus] = useState(true);
+    const [hasSubmitted, setHasSubmitted] = useState(false);
+
     // const [submitErrorMsg, setSubmitErrorMsg] = useState('');
 
     const onFormChange = (event) => {
@@ -21,23 +24,30 @@ function SubscribeForm() {
     const onFormSubmit = async (event) => {
         event.preventDefault();
 
-        // need await for promise
-        const response = await fetch('http://localhost:8080/addSubscriber', {
-            method: 'post',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                email: subscribeFormData.email,
-                firstName: subscribeFormData.firstName,
-                lastName: subscribeFormData.lastName
-            }),
-        })
+        setHasSubmitted(true);
 
-        console.log(
-            `Successfully added contact as an audience member. The contact's id is ${response.id}.`
-        );
+        try {
+            // need await for promise
+            const response = await fetch('http://localhost:8080/addSubscriber', {
+                method: 'post',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    email: subscribeFormData.email,
+                    firstName: subscribeFormData.firstName,
+                    lastName: subscribeFormData.lastName
+                }),
+            })
 
+            console.log(response);
+            setSubmitStatus(true);
+        } catch (error) {
+            console.error('error: ', error);
+            setSubmitStatus(false);
+        }
+
+        // wanted regex to check, forgot required already does
         // if (email.trim() === '') {
         //     setSubmitErrorMsg('Email is required');
         // } else {
@@ -51,9 +61,6 @@ function SubscribeForm() {
     return (
         <>
             <form onSubmit={onFormSubmit} className="subscribeFormContent">
-                {/* <div className="errorMessage">
-                    <p>{submitErrorMsg}</p>
-                </div> */}
                 <div className="emailAddTxtAndInput">
                     <div className="emailAddField">
                         <p className="nLInputName">Email Address</p>
@@ -76,6 +83,12 @@ function SubscribeForm() {
                 </div>
                 <div className="newsLetterSub">
                     <button type="submit" className="newsLetterSubBtn">Subscribe</button>
+                </div>
+                <div className="submitStatus">
+                    {
+                        hasSubmitted && <p>{submitStatus ?
+                            'Thank you for subscribing!' : 'Subscription failed, please reach out via the contacts provided below.'}</p>
+                    }
                 </div>
             </form>
         </>

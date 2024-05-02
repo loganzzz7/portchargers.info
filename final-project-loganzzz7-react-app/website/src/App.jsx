@@ -9,9 +9,7 @@ function App() {
 
   return (
     <>
-      <header>
-        <Navbar />
-      </header>
+      <Navbar />
       <main>
         <Content />
       </main>
