@@ -6,3 +6,77 @@
     height: 45px;
     border: 2px solid #43DD52;
 }
+
+.chatBox {
+    position: fixed;
+    bottom: 90px;
+    right: 30px;
+    width: 350px;
+    height: 400px;
+    background-color: rgba(0, 0, 0, 0.997);
+    border: 2px solid #43DD52;
+    border-radius: 5px;
+    padding: 15px;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sendMessage {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sendMessage input {
+    background-color: rgba(255, 255, 255, 0.997);
+    border-radius: 5px;
+    border: 2px solid #43DD52;
+    min-width: 260px;
+}
+
+.sendMessage input:focus {
+    outline: none;
+}
+
+.sendMessage button {
+    background-color: rgba(255, 255, 255, 0.997);
+    border-radius: 5px;
+    border: 2px solid #43DD52;
+}
+
+.sendMessage button:focus {
+    outline: none;
+}
+
+.chatMessages {
+    height: 350px;
+    overflow-y: scroll;
+    background-color: rgba(255, 255, 255, 0.997);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    margin: 0.3rem 0.75rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    word-wrap: break-word;
+    max-width: 250px;
+}
+
+.message.user {
+    background-color: #43DD52;
+    width: max-content;
+    max-width: 340px;
+    color: rgba(0, 0, 0, 0.997);
+    align-self: flex-end;
+}
+
+.message.bot {
+    background-color: #43DD52;
+    width: max-content;
+    color: rgba(0, 0, 0, 0.997);
+    align-self: flex-start;
+}
