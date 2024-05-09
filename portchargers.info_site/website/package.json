@@ -1,12 +1,12 @@
 {
-  "name": "final-project-loganzzz7-react-app",
+  "name": "portchargers-info-loganzzz7-react-app",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "predeploy": "vite build --base=/final-project-loganzzz7/",
+    "predeploy": "vite build --base=/portchargers-info-loganzzz7/",
     "deploy": "gh-pages -d dist",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
