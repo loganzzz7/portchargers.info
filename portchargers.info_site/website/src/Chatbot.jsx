@@ -32,7 +32,7 @@ function Chatbot() {
         setNewMessage('');
 
         try {
-            const response = await fetch('http://localhost:8080/messageBot', {
+            const response = await fetch('https://portchargers.info:8080/messageBot', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

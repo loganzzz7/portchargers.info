@@ -28,7 +28,7 @@ function SubscribeForm() {
 
         try {
             // need await for promise
-            const response = await fetch('http://localhost:8080/addSubscriber', {
+            const response = await fetch('https://portchargers.info:8080/addSubscriber', {
                 method: 'post',
                 headers: {
                     'Content-Type': 'application/json'
