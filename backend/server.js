@@ -1,6 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
+import fs from 'fs';
 // mailchimp
 import mailchimp from '@mailchimp/mailchimp_marketing';
 // dialogflow
@@ -26,7 +27,7 @@ mailchimp.setConfig({
 
 const app = express();
 
-const port = 8080; // idk y but airplay takes up port 5000 and 7000??
+const port = process.env.PORT || 8080; // idk y but airplay takes up port 5000 and 7000??
 
 app.use(cors());
 app.use(express.json());
