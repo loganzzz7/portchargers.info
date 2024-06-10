@@ -10,6 +10,13 @@ import { v4 as uuidv4 } from 'uuid';
 
 dotenv.config();
 
+// dialogflow API config
+if (process.env.GOOGLE_APPLICATION_CREDENTIALS_BASE64) {
+    const credentials = Buffer.from(process.env.GOOGLE_APPLICATION_CREDENTIALS_BASE64, 'base64').toString('utf8');
+    fs.writeFileSync('/app/credentialsFile.json', credentials);
+    process.env.GOOGLE_APPLICATION_CREDENTIALS = '/app/credentialsFile.json';
+  }
+
 // MAILCHIMP API config
 // api = https://mailchimp.com/developer/marketing/guides/quick-start/#create-an-account
 mailchimp.setConfig({
