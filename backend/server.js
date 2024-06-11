@@ -29,7 +29,14 @@ const app = express();
 
 const port = process.env.PORT || 8080; // idk y but airplay takes up port 5000 and 7000??
 
-app.use(cors());
+// custom domain
+const corsOptions = {
+    origin: 'https://portchargers.info', // your custom domain
+    optionsSuccessStatus: 200,
+  };
+  
+app.use(cors(corsOptions));
+
 app.use(express.json());
 
 // add sub path
